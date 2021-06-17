@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 class ReusableBottom extends StatelessWidget {
-  ReusableBottom({required this.color,required this.buttonName});
+  ReusableBottom({required this.color,required this.buttonName,required this.function});
   final Color color;
-  // final Function onPress;
   final String buttonName;
+  final VoidCallback function;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -15,8 +15,7 @@ class ReusableBottom extends StatelessWidget {
         color: color,
       ),
       child: TextButton(
-        onPressed: (){
-        },
+        onPressed: function,
         child: Text(
           buttonName,
           style: TextStyle(fontSize: 22, color: Colors.white, height: 1.5).copyWith(fontWeight: FontWeight.bold),
