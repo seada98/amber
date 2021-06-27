@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:amber/home_screen.dart';
-import 'package:amber/login_screen.dart';
+import 'package:amber/auth%20screens/login_screen.dart';
 import 'package:flutter/material.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

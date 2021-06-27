@@ -1,4 +1,4 @@
-import 'package:amber/bottom.dart';
+import 'package:amber/custom%20widget/bottom.dart';
 import 'package:flutter/material.dart';
 
 class CodeScreen extends StatefulWidget {

@@ -1,5 +1,6 @@
-import 'package:amber/code_screen.dart';
-import 'package:amber/login_screen.dart';
+import 'package:amber/auth%20screens/code_screen.dart';
+import 'package:amber/home_screen.dart';
+import 'package:amber/auth%20screens/login_screen.dart';
 import 'package:amber/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CodeScreen(),
+      home: HomeScreen(),
     );
   }
 }

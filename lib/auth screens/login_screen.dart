@@ -1,5 +1,6 @@
-import 'package:amber/bottom.dart';
-import 'package:amber/register_screen.dart';
+import 'package:amber/custom%20widget/bottom.dart';
+import 'package:amber/home_screen.dart';
+import 'package:amber/auth%20screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
@@ -107,7 +108,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     buttonName: 'LogIn',
                     color: Colors.tealAccent,
                     function: () {
-
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
 
 
                     },
