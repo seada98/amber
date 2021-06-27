@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'Bar screens/amber_screen.dart';
 import 'Bar screens/chat_screen.dart';
 import 'Bar screens/history_screen.dart';
@@ -14,7 +13,8 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 class _HomeScreenState extends State<HomeScreen> {
-  int currentIndex = 0;
+  int currentIndex = 2;
+  var _pages=[VideoCallScreen(), HistoryScreen(), AmberScreen(), LiveStreamsScreen(), ChatScreen()];
 
   setBottomBarIndex(index) {
     setState(() {
@@ -27,15 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: PageView(
-        controller:  PageController(),
+        controller:  PageController(initialPage: 2,),
           scrollDirection: Axis.horizontal,
-          children: [
-            VideoCallScreen(),
-            HistoryScreen(),
-            AmberScreen(),
-            LiveStreamsScreen(),
-            ChatScreen()
-          ],
+          children: _pages,
           onPageChanged: (index){
           setState(() {
             currentIndex=index;
@@ -43,14 +37,6 @@ class _HomeScreenState extends State<HomeScreen> {
           },
          ),
 
-      // body: Container(
-      //   decoration: BoxDecoration(
-      //     image: DecorationImage(
-      //       image: AssetImage("assets/appbg.png"),
-      //       fit: BoxFit.cover,
-      //     ),
-      //   ),
-      // ),
       bottomNavigationBar: Stack(
         children: [
           Positioned(
@@ -70,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Image.asset('assets/amberIcon.png'),
                         elevation: 0.1,
                         onPressed: () {
-                          setBottomBarIndex(3);
+                          setBottomBarIndex(2);
                         }),
                   ),
                   Container(
@@ -84,12 +70,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             IconButton(
                               icon: Icon(
                                 Icons.video_call,
-                                color: currentIndex == 1
+                                color: currentIndex == 0
                                     ? Colors.black
                                     : Colors.white,
                               ),
                               onPressed: () {
-                                setBottomBarIndex(1);
+                                setBottomBarIndex(0);
                               },
                               splashColor: Colors.white,
                             ),
@@ -97,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               'video call',
                               style: TextStyle(
                                 fontSize: 10,
-                                color: currentIndex == 1
+                                color: currentIndex == 0
                                     ? Colors.black
                                     : Colors.white,
                               ),
@@ -109,18 +95,18 @@ class _HomeScreenState extends State<HomeScreen> {
                             IconButton(
                                 icon: Icon(
                                   Icons.history,
-                                  color: currentIndex == 2
+                                  color: currentIndex == 1
                                       ? Colors.black
                                       : Colors.white,
                                 ),
                                 onPressed: () {
-                                  setBottomBarIndex(2);
+                                  setBottomBarIndex(1);
                                 }),
                             Text(
                               'History',
                               style: TextStyle(
                                 fontSize: 10,
-                                color: currentIndex == 2
+                                color: currentIndex == 1
                                     ? Colors.black
                                     : Colors.white,
                               ),
@@ -135,18 +121,18 @@ class _HomeScreenState extends State<HomeScreen> {
                             IconButton(
                                 icon: Icon(
                                   Icons.live_tv_sharp,
-                                  color: currentIndex == 4
+                                  color: currentIndex == 3
                                       ? Colors.black
                                       : Colors.white,
                                 ),
                                 onPressed: () {
-                                  setBottomBarIndex(4);
+                                  setBottomBarIndex(3);
                                 }),
                             Text(
                               'Live Stream',
                               style: TextStyle(
                                 fontSize: 10,
-                                color: currentIndex == 4
+                                color: currentIndex == 3
                                     ? Colors.black
                                     : Colors.white,
                               ),
@@ -158,18 +144,18 @@ class _HomeScreenState extends State<HomeScreen> {
                             IconButton(
                                 icon: Icon(
                                   Icons.chat,
-                                  color: currentIndex == 5
+                                  color: currentIndex == 4
                                       ? Colors.black
                                       : Colors.white,
                                 ),
                                 onPressed: () {
-                                  setBottomBarIndex(5);
+                                  setBottomBarIndex(4);
                                 }),
                             Text(
                               'Chat',
                               style: TextStyle(
                                 fontSize: 10,
-                                color: currentIndex == 5
+                                color: currentIndex == 4
                                     ? Colors.black
                                     : Colors.white,
                               ),
